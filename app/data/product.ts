@@ -9,32 +9,35 @@ export const products: Product[] = [
     longDescription:
       "Dive deep into the world of artificial intelligence with our revolutionary learning system. From understanding neural networks to implementing practical AI solutions, this comprehensive guide takes you from beginner to expert. Includes hands-on projects, real-world case studies, and exclusive interviews with AI industry leaders.",
     price: 50,
-    image: "/ai-mastery.png",
-    link: "https://www.facebook.com/share/p/12CT1A6JLss/",
+    image: "/robert.png",
+    facebookLink: "https://www.facebook.com/share/p/12CT1A6JLss/",
+    gumroadLink: "https://yourstore.gumroad.com/l/robert-kiyosaki-bundle",
     secondImage: "/ai-mastery-second.png",
   },
   {
     id: 2,
-    title: "Book 2",
+    title: "For Dummies Bundle",
     description:
       "The Real World by Andrew Tate is a high-priced membership program that claims to teach participants about wealth creation, fitness, and personal development.",
     longDescription:
       "Experience a groundbreaking approach to modern success through our innovative mentorship program. Learn wealth-building strategies, develop crucial life skills, and join a community of driven individuals. Features weekly live sessions, practical assignments, and personalized feedback from industry experts.",
     price: 50,
-    image: "/the-real-world.png",
-    link: "https://www.facebook.com/share/p/1BoqPGJx5x/",
+    image: "/dummies.png",
+    facebookLink: "https://www.facebook.com/share/p/1BoqPGJx5x/",
+    gumroadLink: "https://yourstore.gumroad.com/l/dummies-bundle",
     secondImage: "/the-real-world-second.png",
   },
   {
     id: 3,
-    title: "Freelancing Learning Materials",
+    title: "For Dummies Bundle 2",
     description:
       "Transform your career with our comprehensive Freelancing Mastery learning materials. This expertly crafted collection provides everything you need to build a thriving freelance business from the ground up.",
     longDescription:
       "Discover the secrets of six-figure freelancing with our battle-tested blueprint. From finding your perfect niche to scaling your business, this comprehensive guide covers everything. Includes proposal templates, client communication scripts, and proven strategies from top-earning freelancers worldwide.",
     price: 50,
-    image: "/freelancing.png",
-    link: "https://www.facebook.com/share/p/1WruzdBUmR/",
+    image: "/dummies2.png",
+    facebookLink: "https://www.facebook.com/share/p/1WruzdBUmR/",
+    gumroadLink: "https://yourstore.gumroad.com/l/dummies-bundle-2",
     secondImage: "/freelancing-second.png",
   },
   {
@@ -45,8 +48,10 @@ export const products: Product[] = [
     longDescription:
       "Access a treasure trove of knowledge with our premium digital library. This carefully curated collection features rare insights, cutting-edge strategies, and timeless wisdom across multiple disciplines. Regular updates ensure you stay ahead of industry trends while building valuable skills.",
     price: 50,
-    image: "/e-books.png",
-    link: "https://www.facebook.com/share/p/1FLqnmXoxA/",
+    image: "/improvement.png",
+    facebookLink: "https://www.facebook.com/share/p/1FLqnmXoxA/",
+    gumroadLink: "https://yourstore.gumroad.com/l/ebooks-collection",
     secondImage: "/e-books-second.png",
   },
 ];
+

@@ -22,7 +22,7 @@ const Specials = () => {
         className="text-center p-2"
       >
         <h2 className="text-4xl font-bold">500+</h2>
-        <p className="text-gray-600">Side Hustle Products</p>
+        <p className="text-gray-600">Soft Copy Products</p>
       </motion.div>
 
       <motion.div

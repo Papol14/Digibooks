@@ -5,6 +5,7 @@ export interface Product {
   longDescription: string;
   price: number;
   image: string;
-  link: string;
   secondImage: string;
+  facebookLink: string;
+  gumroadLink: string;
 }

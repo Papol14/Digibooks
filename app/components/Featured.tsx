@@ -86,59 +86,60 @@ const Featured = () => {
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {featuredProducts.map((product: Product, index: number) => (
+            {featuredProducts.map((product: Product, index: number) => (
             <div
               key={product.id}
-              className={`bg-gray-200 rounded-lg shadow-lg overflow-hidden transition-all duration-700 transform 
-                ${
-                  isVisible
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 " +
-                      (index % 2 === 0 ? "translate-y-12" : "-translate-y-12")
-                }
-                ${
-                  index === 0
-                    ? "delay-100"
-                    : index === 1
-                    ? "delay-300"
-                    : "delay-500"
-                }`}
+              className={`bg-white rounded-xl shadow-xl hover:shadow-2xl overflow-hidden transition-all duration-500 transform hover:-translate-y-1 
+              ${
+                isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 " +
+                  (index % 2 === 0 ? "translate-y-12" : "-translate-y-12")
+              }
+              ${
+                index === 0
+                ? "delay-100"
+                : index === 1
+                ? "delay-300"
+                : "delay-500"
+              }`}
             >
-              <div className="relative h-48">
-                <Image
-                  src={product.image}
-                  alt={product.title}
-                  className="w-full h-full object-cover"
-                  layout="responsive"
-                  width={500}
-                  height={300}
-                />
+              <div className="relative h-64 overflow-hidden group">
+              <Image
+                src={product.image}
+                alt={product.title}
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                width={500}
+                height={300}
+                priority
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-20 transition-opacity duration-300 opacity-0 group-hover:opacity-100" />
               </div>
 
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">{product.title}</h3>
-                <p className="text-gray-600 mb-4">
-                  {expandedItems[product.id]
-                    ? product.description
-                    : product.description.slice(0, 100) + "..."}
-                </p>
-                <button
-                  onClick={() => toggleDescription(String(product.id))}
-                  className="text-blue-500 hover:text-blue-700 mb-4 text-sm"
+              <div className="p-6 bg-gradient-to-b from-white to-gray-50">
+              <h3 className="text-xl font-bold mb-3 text-gray-800">{product.title}</h3>
+              <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+                {expandedItems[product.id]
+                ? product.description
+                : product.description.slice(0, 100) + "..."}
+              </p>
+              <button
+                onClick={() => toggleDescription(String(product.id))}
+                className="text-blue-600 hover:text-blue-800 mb-4 text-sm font-medium transition-colors"
+              >
+                {expandedItems[product.id] ? "See Less" : "See More"}
+              </button>
+              <div className="flex justify-between items-center pt-2 border-t border-gray-200">
+                <span className="text-2xl font-bold text-green-600">
+                ₱{product.price}
+                </span>
+                <Link
+                href={`/products/${product.id}`}
+                className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-300 font-medium"
                 >
-                  {expandedItems[product.id] ? "See Less" : "See More"}
-                </button>
-                <div className="flex justify-between items-center">
-                  <span className="text-2xl font-bold text-green-600">
-                    ₱{product.price}
-                  </span>
-                  <Link
-                    href={`/products/${product.id}`}
-                    className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors"
-                  >
-                    See Details
-                  </Link>
-                </div>
+                See Details
+                </Link>
+              </div>
               </div>
             </div>
           ))}

@@ -4,7 +4,6 @@ import { Product } from "../../types/product";
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useRouter } from "next/router";
 
 const Page: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState<string>("");
@@ -35,18 +34,21 @@ const Page: React.FC = () => {
             <Link
               href={`/products/${id}`}
               key={id}
-              className="block bg-gray-200 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow border hover:border-blue-400"
+              className="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100"
             >
-              <Image
-                src={image}
-                alt={title}
-                width={500}
-                height={300}
-                className="w-full h-48 object-cover"
-              />
+              <div className="relative h-48 overflow-hidden">
+                <Image
+                  src={image}
+                  alt={title}
+                  width={500}
+                  height={300}
+                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                  priority
+                />
+              </div>
               <div className="p-4">
-                <h2 className="text-xl font-semibold mb-2">{title}</h2>
-                <p className="text-green-600 font-bold">₱{price}</p>
+                <h2 className="text-xl font-semibold mb-2 text-gray-800">{title}</h2>
+                <p className="text-green-600 font-bold text-xl">₱{price}</p>
               </div>
             </Link>
           ))}
@@ -56,28 +58,5 @@ const Page: React.FC = () => {
   );
 };
 
-const SingleProductPage: React.FC = () => {
-  const router = useRouter();
-  const { id } = router.query;
-
-  const product = products.find((product: Product) => product.id === id);
-
-  if (!product) return <div>Product not found</div>;
-
-  return (
-    <div className="container mx-auto p-6">
-      <h1 className="text-2xl font-bold">{product.title}</h1>
-      <Image
-        src={product.image}
-        alt={product.title}
-        width={500}
-        height={300}
-        className="w-full h-48 object-cover"
-      />
-      <p className="text-green-600 font-bold">₱{product.price}</p>
-      <p>{product.description}</p>
-    </div>
-  );
-};
-
 export default Page;
+

@@ -23,9 +23,9 @@ const Navbar: React.FC = () => {
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <Image
-            src="/next.svg"
+            src="/icon.png"
             alt="Logo"
-            className="h-10 w-10 mr-2 p-1 border border-gray-700 rounded-md"
+            className="h-10 w-10 mr-2  border-gray-700 rounded-md"
             width={40}
             height={40}
           />
